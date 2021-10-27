@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:miluq/logger/logger.dart';
 import 'package:miluq/widgets/drawer.dart';
+import 'package:miluq/widgets/messages/index.dart';
+import 'package:miluq/widgets/notifications.dart';
 
 class PageItem {
   final String name;
@@ -31,7 +33,7 @@ class _IndexPageState extends State<IndexPage> {
         name: 'Messages',
         icon: Icon(Icons.message),
         widget: Center(
-          child: Text('Message page'),
+          child: Messages(),
         )),
     const PageItem(
         name: 'Contacts',
@@ -43,13 +45,7 @@ class _IndexPageState extends State<IndexPage> {
         name: 'Notifications',
         icon: Icon(Icons.notifications),
         widget: Center(
-          child: Text('Notification page'),
-        )),
-    const PageItem(
-        name: 'Settings',
-        icon: Icon(Icons.settings),
-        widget: Center(
-          child: Text('Settings page'),
+          child: Notifications(),
         )),
   ];
   int _currentIndex = 0;
@@ -64,17 +60,15 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('App Name'),
+        title: Text(widget.title),
         actions: [
           IconButton(
-              onPressed: () => logger.i('Share button pressed'),
+              onPressed: () => logger.i('More button pressed'),
               icon: const Icon(Icons.more_vert)),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(_currentIndex == _pages.length - 1
-            ? Icons.arrow_back
-            : Icons.arrow_forward),
+        child: _pages[(_currentIndex + 1) % _pages.length].icon,
         onPressed: () => setState(() {
           _currentIndex = (_currentIndex + 1) % _pages.length;
           _pageController.jumpToPage(_currentIndex);
@@ -89,7 +83,7 @@ class _IndexPageState extends State<IndexPage> {
         children: _pages.map((e) => e.widget).toList(),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
+        // type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         onTap: (index) => setState(() {
           _currentIndex = index;
