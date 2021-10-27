@@ -23,9 +23,9 @@ class Command {
 @JsonSerializable()
 class Response {
   int syncId;
-  Map<String, dynamic> content;
+  Map<String, dynamic> data;
 
-  Response({required this.syncId, required this.content});
+  Response({required this.syncId, required this.data});
 
   factory Response.fromJson(json) => _$ResponseFromJson(json);
 

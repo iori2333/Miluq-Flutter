@@ -22,10 +22,10 @@ Map<String, dynamic> _$CommandToJson(Command instance) => <String, dynamic>{
 
 Response _$ResponseFromJson(Map<String, dynamic> json) => Response(
       syncId: json['syncId'] as int,
-      content: json['content'] as Map<String, dynamic>,
+      data: json['content'] as Map<String, dynamic>,
     );
 
 Map<String, dynamic> _$ResponseToJson(Response instance) => <String, dynamic>{
       'syncId': instance.syncId,
-      'content': instance.content,
+      'content': instance.data,
     };
