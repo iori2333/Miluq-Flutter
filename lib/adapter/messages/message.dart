@@ -1,7 +1,7 @@
 import 'package:miluq/adapter/messages/message_chain.dart';
 
 abstract class Message {
-  String type;
+  final String type;
 
   Message(this.type);
 

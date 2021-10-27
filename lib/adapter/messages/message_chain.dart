@@ -27,4 +27,9 @@ class MessageChain with ListMixin<Message> {
     _messages.add(message);
     return this;
   }
+
+  MessageChain concat(List<Message> messages) {
+    messages.forEach(_messages.add);
+    return this;
+  }
 }
