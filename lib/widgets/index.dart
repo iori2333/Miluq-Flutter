@@ -25,7 +25,7 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
-  final PageController _pageController = PageController();
+  final _pageController = PageController();
   final _pages = [
     const PageItem(
         name: 'Messages',
@@ -68,11 +68,13 @@ class _IndexPageState extends State<IndexPage> {
         actions: [
           IconButton(
               onPressed: () => logger.i('Share button pressed'),
-              icon: const Icon(Icons.share)),
+              icon: const Icon(Icons.more_vert)),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.arrow_forward),
+        child: Icon(_currentIndex == _pages.length - 1
+            ? Icons.arrow_back
+            : Icons.arrow_forward),
         onPressed: () => setState(() {
           _currentIndex = (_currentIndex + 1) % _pages.length;
           _pageController.jumpToPage(_currentIndex);
