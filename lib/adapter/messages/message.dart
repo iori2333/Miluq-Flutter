@@ -10,4 +10,6 @@ abstract class Message {
   MessageChain operator +(Message other) {
     return MessageChain([this, other]);
   }
+
+  Map<String, dynamic> toJson();
 }

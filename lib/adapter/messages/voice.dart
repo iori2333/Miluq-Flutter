@@ -16,5 +16,6 @@ class Voice extends Message {
 
   factory Voice.fromJson(json) => _$VoiceFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$VoiceToJson(this);
 }

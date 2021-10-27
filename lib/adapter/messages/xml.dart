@@ -11,5 +11,6 @@ class Xml extends Message {
 
   factory Xml.fromJson(json) => _$XmlFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$XmlToJson(this);
 }

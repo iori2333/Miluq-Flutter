@@ -14,5 +14,6 @@ class File extends Message {
 
   factory File.fromJson(json) => _$FileFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$FileToJson(this);
 }

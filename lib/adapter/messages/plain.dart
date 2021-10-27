@@ -11,5 +11,6 @@ class Plain extends Message {
 
   factory Plain.fromJson(json) => _$PlainFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$PlainToJson(this);
 }

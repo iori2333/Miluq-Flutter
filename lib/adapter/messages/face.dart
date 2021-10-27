@@ -12,5 +12,6 @@ class Face extends Message {
 
   factory Face.fromJson(json) => _$FaceFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$FaceToJson(this);
 }

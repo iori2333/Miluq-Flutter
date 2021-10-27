@@ -21,5 +21,6 @@ class Quote extends Message {
 
   factory Quote.fromJson(json) => _$QuoteFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$QuoteToJson(this);
 }

@@ -9,5 +9,6 @@ class AtAll extends Message {
 
   factory AtAll.fromJson(json) => _$AtAllFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AtAllToJson(this);
 }

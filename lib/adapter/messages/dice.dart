@@ -11,5 +11,6 @@ class Dice extends Message {
 
   factory Dice.fromJson(json) => _$DiceFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$DiceToJson(this);
 }

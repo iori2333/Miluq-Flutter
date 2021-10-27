@@ -32,4 +32,12 @@ class MessageChain with ListMixin<Message> {
     messages.forEach(_messages.add);
     return this;
   }
+
+  List<Map<String, dynamic>> toJson() {
+    return _messages.map((e) {
+      final send = e.toJson();
+      send['type'] = e.type;
+      return send;
+    }).toList();
+  }
 }

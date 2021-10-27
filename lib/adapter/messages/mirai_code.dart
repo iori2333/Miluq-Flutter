@@ -11,5 +11,6 @@ class MiraiCode extends Message {
 
   factory MiraiCode.fromJson(json) => _$MiraiCodeFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$MiraiCodeToJson(this);
 }

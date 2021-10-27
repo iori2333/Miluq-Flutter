@@ -14,6 +14,7 @@ class Image extends Message {
 
   factory Image.fromJson(json) => _$ImageFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ImageToJson(this);
 }
 
@@ -29,5 +30,6 @@ class FlashImage extends Message {
 
   factory FlashImage.fromJson(json) => _$FlashImageFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$FlashImageToJson(this);
 }

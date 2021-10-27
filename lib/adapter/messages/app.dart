@@ -11,5 +11,6 @@ class App extends Message {
 
   factory App.fromJson(json) => _$AppFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AppToJson(this);
 }

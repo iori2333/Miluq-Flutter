@@ -11,5 +11,6 @@ class Poke extends Message {
 
   factory Poke.fromJson(json) => _$PokeFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$PokeToJson(this);
 }

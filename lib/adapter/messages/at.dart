@@ -15,5 +15,6 @@ class At extends Message {
 
   factory At.fromJson(json) => _$AtFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$AtToJson(this);
 }

@@ -12,5 +12,6 @@ class Source extends Message {
 
   factory Source.fromJson(json) => _$SourceFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$SourceToJson(this);
 }
