@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:miluq/logger/logger.dart';
+import 'package:miluq/router/router.dart';
 import 'package:miluq/widgets/drawer.dart';
 import 'package:miluq/widgets/messages/index.dart';
 import 'package:miluq/widgets/notifications.dart';
@@ -62,6 +63,9 @@ class _IndexPageState extends State<IndexPage> {
       appBar: AppBar(
         title: Text(widget.title),
         actions: [
+          IconButton(
+              onPressed: () => $router.navigateTo(context, '/settings'),
+              icon: const Icon(Icons.settings)),
           IconButton(
               onPressed: () => logger.i('More button pressed'),
               icon: const Icon(Icons.more_vert)),
