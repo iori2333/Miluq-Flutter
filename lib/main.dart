@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:miluq/router/parser.dart';
 import 'package:miluq/router/router.dart';
+import 'package:miluq/router/routes.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -23,19 +23,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _router = MiluqRouter.instance;
-  final _parser = MiluqRouteParser.instance;
+  _MyAppState() {
+    Routes.configureRoutes($router);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       title: 'Miluq Client',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      routerDelegate: _router,
-      routeInformationParser: _parser,
+      onGenerateRoute: $router.generator,
     );
   }
 }
