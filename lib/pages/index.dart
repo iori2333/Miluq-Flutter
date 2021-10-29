@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:miluq/logger/logger.dart';
+import 'package:provider/provider.dart';
+
 import 'package:miluq/router/router.dart';
+import 'package:miluq/store/theme.dart';
 import 'package:miluq/widgets/drawer.dart';
 import 'package:miluq/widgets/messages/index.dart';
 import 'package:miluq/widgets/notifications.dart';
@@ -57,6 +59,13 @@ class _IndexPageState extends State<IndexPage> {
     _currentIndex = 0;
   }
 
+  void _onTap(int index) {
+    setState(() {
+      _currentIndex = index;
+      _pageController.jumpToPage(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,11 +73,17 @@ class _IndexPageState extends State<IndexPage> {
         title: Text(widget.title),
         actions: [
           IconButton(
-              onPressed: () => $router.navigateTo(context, '/settings'),
-              icon: const Icon(Icons.settings)),
+            onPressed: () {
+              $router.navigateTo(context, '/settings');
+            },
+            icon: const Icon(Icons.settings),
+          ),
           IconButton(
-              onPressed: () => logger.i('More button pressed'),
-              icon: const Icon(Icons.more_vert)),
+            onPressed: () {
+              context.read<MiluqTheme>().setPrimaryColor(Colors.blue);
+            },
+            icon: const Icon(Icons.more_vert),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -78,7 +93,10 @@ class _IndexPageState extends State<IndexPage> {
           _pageController.jumpToPage(_currentIndex);
         }),
       ),
-      drawer: const AppDrawer(),
+      drawer: AppDrawer(
+        pages: _pages,
+        onTap: _onTap,
+      ),
       body: PageView(
         controller: _pageController,
         onPageChanged: (index) => setState(() {
@@ -87,12 +105,8 @@ class _IndexPageState extends State<IndexPage> {
         children: _pages.map((e) => e.widget).toList(),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        // type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
-        onTap: (index) => setState(() {
-          _currentIndex = index;
-          _pageController.jumpToPage(index);
-        }),
+        onTap: _onTap,
         items: _pages
             .map((e) => BottomNavigationBarItem(icon: e.icon, label: e.name))
             .toList(),
