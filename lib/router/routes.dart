@@ -32,6 +32,7 @@ class Routes {
     },
     '/group/:id': (context, params) => const TestWidget('Group'),
     '/settings': (context, params) => const TestWidget('Settings'),
+    '/about': (context, params) => const TestWidget('About'),
   };
 
   static void configureRoutes(FluroRouter router) {

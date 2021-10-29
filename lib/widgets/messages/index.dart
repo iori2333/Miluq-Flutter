@@ -22,10 +22,17 @@ class _MessagesState extends State<Messages> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextField(
-          onChanged: (value) => setState(() {
-            _text = value;
-          }),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: TextField(
+            decoration: const InputDecoration(
+              labelText: 'Search Message',
+              prefixIcon: Icon(Icons.search),
+            ),
+            onSubmitted: (value) => setState(() {
+              _text = value;
+            }),
+          ),
         ),
         const Expanded(child: MessageList()),
       ],
