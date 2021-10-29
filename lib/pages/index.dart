@@ -6,7 +6,7 @@ import 'package:miluq/router/router.dart';
 import 'package:miluq/store/theme.dart';
 import 'package:miluq/widgets/drawer.dart';
 import 'package:miluq/widgets/messages/index.dart';
-import 'package:miluq/widgets/notifications.dart';
+import 'package:miluq/widgets/notice_list.dart';
 
 class PageItem {
   final String name;
@@ -33,23 +33,26 @@ class _IndexPageState extends State<IndexPage> {
   final _pageController = PageController();
   final _pages = [
     const PageItem(
-        name: 'Messages',
-        icon: Icon(Icons.message),
-        widget: Center(
-          child: Messages(),
-        )),
+      name: 'Messages',
+      icon: Icon(Icons.message),
+      widget: Center(
+        child: Messages(),
+      ),
+    ),
     const PageItem(
-        name: 'Contacts',
-        icon: Icon(Icons.contacts),
-        widget: Center(
-          child: Text('Contacts page'),
-        )),
+      name: 'Contacts',
+      icon: Icon(Icons.contacts),
+      widget: Center(
+        child: Text('Contacts page'),
+      ),
+    ),
     const PageItem(
-        name: 'Notifications',
-        icon: Icon(Icons.notifications),
-        widget: Center(
-          child: Notifications(),
-        )),
+      name: 'Notifications',
+      icon: Icon(Icons.notifications),
+      widget: Center(
+        child: NoticeList(),
+      ),
+    ),
   ];
   int _currentIndex = 0;
 
