@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:miluq/widgets/messages/message_list.dart';
+import 'package:miluq/widgets/chats/chat_list.dart';
 
-class Messages extends StatefulWidget {
-  const Messages({Key? key}) : super(key: key);
+class Chats extends StatefulWidget {
+  const Chats({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _MessagesState();
+  State<StatefulWidget> createState() => _ChatsState();
 }
 
-class _MessagesState extends State<Messages> {
+class _ChatsState extends State<Chats> {
   String _text = '';
 
   @override
@@ -34,7 +34,9 @@ class _MessagesState extends State<Messages> {
             }),
           ),
         ),
-        const Expanded(child: MessageList()),
+        const Expanded(
+          child: ChatList(),
+        ),
       ],
     );
   }

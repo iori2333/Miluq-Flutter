@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:miluq/router/router.dart';
 import 'package:simple_moment/simple_moment.dart';
 
-class MessageItem extends StatelessWidget {
+class MessageTile extends StatelessWidget {
   final int id;
   final String name;
   final String content;
@@ -10,7 +10,7 @@ class MessageItem extends StatelessWidget {
   final Widget? avatar;
   final String type;
 
-  const MessageItem(
+  const MessageTile(
       {required this.id,
       required this.name,
       required this.content,

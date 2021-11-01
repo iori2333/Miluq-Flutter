@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:miluq/widgets/messages/message_item.dart';
+import 'package:miluq/widgets/chats/chat_tile.dart';
 
-class MessageList extends StatefulWidget {
-  const MessageList({Key? key}) : super(key: key);
+class ChatList extends StatefulWidget {
+  const ChatList({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _MessageListState();
+  State<StatefulWidget> createState() => _ChatListState();
 }
 
-class _MessageListState extends State<MessageList> {
+class _ChatListState extends State<ChatList> {
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -21,7 +21,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -29,7 +29,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -37,7 +37,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'group',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -45,7 +45,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -53,7 +53,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -61,7 +61,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -69,7 +69,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -77,7 +77,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -85,7 +85,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',
@@ -93,7 +93,7 @@ class _MessageListState extends State<MessageList> {
           avatar: const Icon(Icons.supervised_user_circle),
           type: 'private',
         ),
-        MessageItem(
+        MessageTile(
           id: 114514,
           name: '田所浩二',
           content: '哼哼哼',

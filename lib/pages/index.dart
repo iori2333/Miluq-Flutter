@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:miluq/router/router.dart';
 import 'package:miluq/store/theme.dart';
 import 'package:miluq/widgets/drawer.dart';
-import 'package:miluq/widgets/messages/index.dart';
+import 'package:miluq/widgets/chats/index.dart';
 import 'package:miluq/widgets/notice_list.dart';
 
 class PageItem {
@@ -21,9 +21,7 @@ class PageItem {
 }
 
 class IndexPage extends StatefulWidget {
-  final String title;
-
-  const IndexPage(this.title, {Key? key}) : super(key: key);
+  const IndexPage({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _IndexPageState();
@@ -33,10 +31,10 @@ class _IndexPageState extends State<IndexPage> {
   final _pageController = PageController();
   final _pages = [
     const PageItem(
-      name: 'Messages',
+      name: 'Chats',
       icon: Icon(Icons.message),
       widget: Center(
-        child: Messages(),
+        child: Chats(),
       ),
     ),
     const PageItem(
@@ -73,7 +71,7 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(_pages[_currentIndex].name),
         actions: [
           IconButton(
             onPressed: () {
@@ -84,6 +82,7 @@ class _IndexPageState extends State<IndexPage> {
           IconButton(
             onPressed: () {
               context.read<MiluqTheme>().setPrimaryColor(Colors.blue);
+              context.read<MiluqTheme>().setThemeMode(ThemeMode.dark);
             },
             icon: const Icon(Icons.more_vert),
           ),
