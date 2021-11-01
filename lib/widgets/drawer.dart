@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:miluq/pages/index.dart';
 import 'package:miluq/router/router.dart';
+import 'package:miluq/store/theme.dart';
+import 'package:provider/provider.dart';
 
 class AppDrawer extends StatelessWidget {
   final List<PageItem> pages;
@@ -24,9 +26,11 @@ class AppDrawer extends StatelessWidget {
                 controller: ScrollController(),
                 padding: EdgeInsets.zero,
                 children: <Widget>[
-                  const DrawerHeader(
-                    decoration: BoxDecoration(color: Colors.purple),
-                    child: Text('Header'),
+                  DrawerHeader(
+                    decoration: BoxDecoration(
+                      color: context.watch<MiluqTheme>().color,
+                    ),
+                    child: const Text('Header'),
                   ),
                   ...pages.map((e) {
                     return ListTile(
