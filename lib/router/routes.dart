@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:miluq/pages/index.dart';
+import 'package:miluq/pages/private.dart';
 
 class TestWidget extends StatelessWidget {
   final String _title;
@@ -22,13 +23,13 @@ typedef HandlerFunc = Widget? Function(
 
 class Routes {
   static final Map<String, HandlerFunc> _routes = {
-    '/': (context, params) => const IndexPage('Miluq'),
+    '/': (context, params) => const IndexPage(),
     '/private/:id': (context, params) {
       final id = params['id']?[0];
       if (id == null) {
         return null;
       }
-      return TestWidget('Private $id');
+      return PrivateChat(int.tryParse(id) as int);
     },
     '/group/:id': (context, params) => const TestWidget('Group'),
     '/settings': (context, params) => const TestWidget('Settings'),
