@@ -6,7 +6,7 @@ import 'package:miluq/router/router.dart';
 import 'package:miluq/store/theme.dart';
 import 'package:miluq/widgets/drawer.dart';
 import 'package:miluq/widgets/chats/index.dart';
-import 'package:miluq/widgets/notice_list.dart';
+import 'package:miluq/widgets/notices/notice_list.dart';
 
 class PageItem {
   final String name;
